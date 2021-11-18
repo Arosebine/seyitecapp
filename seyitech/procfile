@@ -1,0 +1,1 @@
+web: gunicorn seyitechapp.wsgi --log-file -
