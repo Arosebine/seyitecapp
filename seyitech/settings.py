@@ -33,9 +33,9 @@ MEDIA_URL = '/media/'
 SECRET_KEY = 'django-insecure-#z2bw19db@s_+297hx&^v+a4exbp5bmw+1-ojts8p-nvhz%ts8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['jastranet.com', 'www.jastranet.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'seyitechapp.herokuapp.com']
 
 
 # Application definition
@@ -63,6 +63,7 @@ MESSAGE_TAGS = {
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,6 +141,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
